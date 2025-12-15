@@ -29,7 +29,7 @@ with st.form(key="my-form"):
             form_data_dict = {"politician_name":politician_name, "age":age, "color":color, "lie_date":lie_date, "lie":lie}
             print(f"form_data_dict: {form_data_dict}")
             
-            res = requests.post(url="")
+            res = requests.post(url="https://")
             print(res)
             print(f"res.status_code: {res.status_code}")
             print(f"res.ok: {res.text}")
