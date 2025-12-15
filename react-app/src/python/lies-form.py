@@ -24,6 +24,11 @@ with st.form(key="my-form"):
 
     submit = st.form_submit_button()
     if submit:
-        st.success("Ok")
+        if consent and len(politician_name)>=1:
+            form_data_dict = {"politician_name":politician_name, "age":age, "color":color, "lie_date":lie_date, "lie":lie}
+            print(f"form_data_dict: {form_data_dict}")
+            st.success("Ok")
+        else:
+            st.error("Please fill out the form fields.")
     else:
         st.error("Please fill out the form fields.")
