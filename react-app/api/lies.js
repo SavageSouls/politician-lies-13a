@@ -6,6 +6,6 @@ export default async function handler(req, res) {
         console.log('body', body)
         return res.sendStatus(201)
     } else{
-
+        return res.sendStatus(405)
     }
 }
