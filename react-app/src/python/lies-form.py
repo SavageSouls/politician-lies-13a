@@ -4,6 +4,10 @@ import requests
 st.set_page_config(page_title="Lies page", layout="wide")
 st.title("Lies from")
 
+def eventHandler(event):
+    print(event)
+    # TODO - implement event handler
+
 with st.form(key="my-form"):
     col1, col2 = st.columns(2)
     with col1:
@@ -23,7 +27,7 @@ with st.form(key="my-form"):
         st.subheader("Review")
         consent = st.checkbox("Yes, I really want to store these data!")
 
-    submit = st.form_submit_button()
+    submit = st.form_submit_button(on_click=eventHandler)
     if submit:
         if consent and len(politician_name)>=1:
             form_data_dict = {"politician_name":politician_name, "age":age, "color":color, "lie_date":lie_date, "lie":lie}
