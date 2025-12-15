@@ -1,4 +1,5 @@
 import streamlit as st
+import requests
 
 st.set_page_config(page_title="Lies page", layout="wide")
 st.title("Lies from")
@@ -27,6 +28,12 @@ with st.form(key="my-form"):
         if consent and len(politician_name)>=1:
             form_data_dict = {"politician_name":politician_name, "age":age, "color":color, "lie_date":lie_date, "lie":lie}
             print(f"form_data_dict: {form_data_dict}")
+            
+            res = requests.post(url="")
+            print(res)
+            print(f"res.status_code: {res.status_code}")
+            print(f"res.ok: {res.text}")
+            
             st.success("Ok")
         else:
             st.error("Please fill out the form fields.")
